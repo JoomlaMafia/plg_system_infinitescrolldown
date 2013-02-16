@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+copyright     Copyright (C) 2013 mktgexperts.com. All rights reserved.
+license       GNU General Public License version 2 or later; see http://www.gnu.org/licenses/gpl-2.0.html
+-->
+<extension version="3.0" type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_infinitescrolldown</name>
+	<author>mktgexperts.com</author>
+	<creationDate>February  2013</creationDate>
+	<copyright>Copyright (C) 2013 mktgexperts.com. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>digitalcomputer2142@gmail.com</authorEmail>
+	<authorUrl>www.mktgexperts.com</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_SYSTEM_INFINITESCROLLDOWN_XML_DESCRIPTION</description>
+
+	<files>
+		<folder>language</folder>
+		<filename plugin="infinitescrolldown">infinitescrolldown.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<media destination="plg_system_infinitescrolldown" folder="media">
+		<folder>images</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+		<filename>index.html</filename>
+	</media>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			
+				<field name="page_stop_frequency" type="text"
+					default="50"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_PAGE_STOP_FREQUENCY_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_PAGE_STOP_FREQUENCY_DESC"
+				/>
+				<field name="offset_trigger" type="text"
+					default="40"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_OFFSET_TRIGGER_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_OFFSET_TRIGGER_DESC"
+				/>				
+				<field name="debug_mode" type="radio"
+					class="btn-group"
+					default="0"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_DEBUG_MODE_TRIGGER_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_DEBUG_MODE_TRIGGER_DESC"
+				>
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="content_elements_selector" type="text"
+					default=".component-content .items-row"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_CONTENT_ELEMENTS_SELECTOR_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_CONTENT_ELEMENTS_SELECTOR_DESC"
+				/>
+				<field name="pagination_selector" type="text"
+					default=".component-content .pagination"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_PAGINATION_SELECTOR_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_PAGINATION_SELECTOR_DESC"
+				/>
+				<field name="next_page_link_selector" type="text"
+					default=".component-content .pagination .pagination-next a"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_NEXT_PAGE_LINK_SELECTOR_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_NEXT_PAGE_LINK_SELECTOR_DESC"
+				/>
+				
+			</fieldset>
+		</fields>
+	</config>
+</extension>
