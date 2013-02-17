@@ -24,20 +24,37 @@ class plgSystemInfiniteScrollDown extends JPlugin {
 		//$execution_side = $this->params->get('execution_side', 'site');
 		$app = & JFactory::getApplication();
 		// Executes only on site side
-		if ($app->getName() == "site")
-		{
+		if ($app->getName() == "site") {
 			$doc =& JFactory::getDocument();
 			// Include script
 			$doc->addScript("media/plg_system_infinitescrolldown/js/infinitescrolldown.js");
 			// Pass parameters as global variables
 			$doc->addScriptDeclaration(
-				"var pageStopFrequency = " . $this->params->get('page_stop_frequency') . "; // Indicates the number of pages to load automatically, leave it 0
-				var offsetTrigger = " . $this->params->get('offset_trigger') . "; // This value represents a percentage of the screen height
-				var flagDebug = " . $this->params->get('debug_mode') . " // Enable/disable the debug mode to output information to console
-				var content_elements_selector =	'" . $this->params->get('content_elements_selector') . "'
-				var next_page_link_selector = '" . $this->params->get('next_page_link_selector') . "'
-				var pagination_selector = '" . $this->params->get('pagination_selector') ."'"
+				"var offset_trigger = " . $this->_ee($this->params->get('offset_trigger')) . "; " .
+				"var content_item_selector =	'" . $this->_ee($this->params->get('content_item_selector')) . "'; " .
+				"var pagination_control_selector = '" . $this->_ee($this->params->get('pagination_control_selector')) . "'; " .
+				"var next_page_link_selector = '" . $this->_ee($this->params->get('next_page_link_selector')) . "'; " .
+				"var page_stop_frequency = " . $this->_ee($this->params->get('page_stop_frequency')) . "; " .
+				"var load_more_button_text = '" . JText::_($this->_ee($this->params->get('load_more_button_text'))) . "'; " .
+				"var debug_mode = " . $this->_ee($this->params->get('debug_mode')) . "; "
 			);
+
+			$doc->addStyleDeclaration($this->params->get('styles'));
 		}
+	}
+
+	/**
+	 * Method to output do HTML entity encoding and escape it.
+	 *
+	 * @param   string  $output  The output to $this->_ee.
+	 *
+	 * @return  string  The $this->_eed output.
+	 */
+	private function _ee($output) {
+		// TODO: clean this mess
+		//return $output;
+		//return htmlentities(html_entity_decode($output, ENT_COMPAT, 'UTF-8'), ENT_COMPAT, 'UTF-8');
+		$output = str_replace("'", "\'", $output);
+		return htmlspecialchars($output, ENT_COMPAT, 'UTF-8');
 	}
 }

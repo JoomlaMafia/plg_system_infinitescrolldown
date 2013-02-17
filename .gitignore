@@ -5,3 +5,4 @@
 .externalToolBuilders
 build
 build.properties.dist
+releases

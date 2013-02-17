@@ -4,11 +4,12 @@ Joomla plugin to dynamically load paginated content on demand.
 
 # Compatibility
 
-Tested on Joomla 2.5 and 3.0
+* Tested on Joomla 2.5
+* Tested on Joomla 3.0
 
 # Description
 
-This plugin dynamically loads paginated content on demand such as "Category blog" pages. The script uses CSS selectors to determine the layout structures and define what elements are the content pages, the content items and the pagination control, this makes this plugin extremely flexible for almost any kind of template.
+This plugin dynamically loads paginated content on demand such as "Category blog" pages. The script uses CSS selectors to determine the layout structures and define what elements are the content items and the pagination control, this makes this plugin extremely flexible for almost any kind of template.
 
 This is non-invasive plugin because it does not modifies the markup from the server side, instead all the changes are made dynamically on the client side, basically the pagination control is set to <code>display: none;</code>, the content items of the next page are dynamically appended after the last existing content items.
 

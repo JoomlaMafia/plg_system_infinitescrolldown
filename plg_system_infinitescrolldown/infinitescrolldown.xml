@@ -31,42 +31,73 @@ license       GNU General Public License version 2 or later; see http://www.gnu.
 		<fields name="params">
 			<fieldset name="basic">
 			
+				<field name="offset_trigger" type="text"
+					default="40"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_OFFSET_TRIGGER_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_OFFSET_TRIGGER_DESC"
+				/>
+				
+				<field name="content_item_selector" type="textarea"
+					rows="3"
+					filter="raw"
+					default=".blog .items-row"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_CONTENT_ITEM_SELECTOR_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_CONTENT_ITEM_SELECTOR_DESC"
+				/>
+				
+				<field name="pagination_control_selector" type="textarea"
+					rows="3"
+					filter="raw"
+					default=".blog .pagination"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_PAGINATION_CONTROL_SELECTOR_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_PAGINATION_CONTROL_SELECTOR_DESC"
+				/>
+
+				<field name="next_page_link_selector" type="textarea"
+					rows="3"
+					filter="raw"
+					default=".blog .pagination li a[title='Next']"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_NEXT_PAGE_LINK_SELECTOR_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_NEXT_PAGE_LINK_SELECTOR_DESC"
+				/>
+				
 				<field name="page_stop_frequency" type="text"
 					default="50"
 					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_PAGE_STOP_FREQUENCY_LABEL"
 					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_PAGE_STOP_FREQUENCY_DESC"
 				/>
-				<field name="offset_trigger" type="text"
-					default="40"
-					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_OFFSET_TRIGGER_LABEL"
-					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_OFFSET_TRIGGER_DESC"
-				/>				
+				
+				<field name="load_more_button_text" type="text"
+					default="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_LOAD_MORE_BUTTON_TEXT"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_LOAD_MORE_BUTTON_TEXT_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_LOAD_MORE_BUTTON_TEXT_DESC"
+				/>
+				
+			</fieldset>
+			
+			<fieldset name="styles"
+				label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELDSER_STYLES_LABEL">
+				<field name="styles" type="textarea"
+					rows="6"
+					filter="raw"
+					default="/*#loadmorebutton {width: 100%; font-size: 1.5em; padding: 10px; line-height: 1em; margin: 20px;}*/"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_STYLES_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_STYLES_DESC"
+				/>
+			</fieldset>
+			
+			<fieldset name="advanced">
 				<field name="debug_mode" type="radio"
 					class="btn-group"
 					default="0"
-					label="PLG_SYSTEM_INFINITESCROLLDOWN_DEBUG_MODE_TRIGGER_LABEL"
-					description="PLG_SYSTEM_INFINITESCROLLDOWN_DEBUG_MODE_TRIGGER_DESC"
+					label="PLG_SYSTEM_INFINITESCROLLDOWN_DEBUG_MODE_LABEL"
+					description="PLG_SYSTEM_INFINITESCROLLDOWN_DEBUG_MODE_DESC"
 				>
 					<option value="0">JNo</option>
 					<option value="1">JYes</option>
 				</field>
-				<field name="content_elements_selector" type="text"
-					default=".component-content .items-row"
-					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_CONTENT_ELEMENTS_SELECTOR_LABEL"
-					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_CONTENT_ELEMENTS_SELECTOR_DESC"
-				/>
-				<field name="pagination_selector" type="text"
-					default=".component-content .pagination"
-					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_PAGINATION_SELECTOR_LABEL"
-					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_PAGINATION_SELECTOR_DESC"
-				/>
-				<field name="next_page_link_selector" type="text"
-					default=".component-content .pagination .pagination-next a"
-					label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_NEXT_PAGE_LINK_SELECTOR_LABEL"
-					description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELD_NEXT_PAGE_LINK_SELECTOR_DESC"
-				/>
-				
 			</fieldset>
+			
 		</fields>
 	</config>
 </extension>
