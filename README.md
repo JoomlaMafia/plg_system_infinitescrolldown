@@ -34,7 +34,11 @@ Note: This plugin comes pre-configured to work out of the box with the Joomla 3 
 
 ## Menu item parameters
 
-For the page menu item make sure the pagination is set to "show", the pagiantion needs to be in the markup. Othe parameters like "# links" can be set to "0" to get them hide.
+For the page menu item make sure the pagination is set to "show", the pagination needs to be in the markup. Other parameters like "# links" can be set to "0" to get them hide. 
+
+Is important to note that the script needs is programmed to work with structures with uniform and repetitive patters, blog pages with mixed structures such as leading articles and normal articles could cause problems if the selector is not well configured. 
+
+For example a blog page that display 2 leading articles and 4 articles in rows of 2, the selector "Content item selector" should select a structure that select all that content in a uniform way, in this case the only solution is select the whole blog content section using the selector "blog" this means the script will load more pages and append blog sections one after another, giving the final result of a page with several blog sections that have 2 leading articles and 4 normal articles each. This mixed repetitive structure may look ugly for some people or the actual solution for other were looking for.
 
 # Cases of use
 
