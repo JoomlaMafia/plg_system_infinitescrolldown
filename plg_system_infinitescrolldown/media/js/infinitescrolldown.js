@@ -44,21 +44,22 @@ window.addEvent('domready', function(){
 			}
 			// convert markup into a mootools object
 			nextPageContent = new Element('document', {html:responseText});
+			// checks if the end of pages is reached 
+			if (nextPageContent.getElements(next_page_link_selector).length == 0) {
+				if (debug_mode) console.log("Infinite scroll down: End of pages");
+				clearInterval(objTimer);
+			}else{
+				// update next page URL
+				nextPage = nextPageContent.getElements(next_page_link_selector)[0].get('href');
+				if (pageCounter >= page_stop_frequency) {
+					if (debug_mode) console.log("Infinite scroll down: Awaiting user intervention");
+					loadMoreButton.setStyle('display', 'block');
+				}
+			}
 			// inject content items
 			nextPageContent.getElements(content_item_selector).each(function(el) {
 				el.inject($$(content_item_selector).getLast(), 'after');
 			});
-			// update next page URL
-			if (nextPageContent.getElements(next_page_link_selector).length == 0) {
-				if (debug_mode) console.log("Infinite scroll down: End of pages");
-				clearInterval(objTimer);
-				return;
-			}
-			nextPage = nextPageContent.getElements(next_page_link_selector)[0].get('href');
-			if (pageCounter >= page_stop_frequency) {
-				if (debug_mode) console.log("Infinite scroll down: Awaiting user intervention");
-				loadMoreButton.setStyle('display', 'block');
-			}
 			// TODO: fire event onPageLoadSuccess
 		},
 		onFailure: function(xhr){
