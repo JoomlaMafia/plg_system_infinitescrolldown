@@ -76,7 +76,8 @@ license       GNU General Public License version 2 or later; see http://www.gnu.
 			</fieldset>
 			
 			<fieldset name="styles"
-				label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELDSER_STYLES_LABEL">
+				label="PLG_SYSTEM_INFINITESCROLLDOWN_FIELDSET_STYLES_LABEL"
+				description="PLG_SYSTEM_INFINITESCROLLDOWN_FIELDSET_STYLES_DESC">
 				<field name="styles" type="textarea"
 					rows="6"
 					filter="raw"
